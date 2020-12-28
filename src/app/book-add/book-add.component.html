@@ -1,0 +1,83 @@
+
+
+    <div class="container">
+        <form [formGroup]="angForm" >
+        <div class="row justify-content-start">
+          <div class="col-8">
+            <div class="form-group">
+                <label >Book Title</label>
+                <input type="text" class="form-control"
+                formControlName="title"
+                #title
+                />
+                </div>
+          </div>
+          
+          <div class="col-8">
+            <div class="form-group">
+                <label >Book Reference</label>
+                <input type="text" class="form-control"
+                formControlName="reference"
+                #prixUnitaire
+                />
+                </div>
+          </div>
+        </div>
+        <div class="row justify-content-start">
+            <div class="col-8">
+              <div class="form-group">
+                  <label >Book Author</label>
+                  <input type="text" class="form-control"
+                  formControlName="author"
+                  />
+                
+                 
+              </div>
+            </div>
+            
+            <div class="col-8">
+              <div class="form-group">
+                  <label >Book releaseDate</label>
+                  <input type="date" class="form-control"
+                  formControlName="releaseDate"
+                
+                  />
+              
+              </div>
+            </div>
+          </div>
+        <div class="row justify-content-start">
+            <div class="col-8">
+                <div class="form-group">
+                    <label>Book Designation</label>
+                    <input type="text" class="form-control"
+                    formControlName="designation"
+                    #designation
+                    />
+                    </div>
+            </div>
+            <div class="row justify-content-start"></div>
+            <div class="col-8">
+              
+
+    <div class="form-group">
+        <label>Book UnitPrice</label>
+        <input type="text" class="form-control"
+        formControlName="unitprice"
+        #unitprice
+        />
+        </div>
+            </div>
+           
+          </div>
+          <div class="form-group">
+            <a routerLink="/books" routerLinkActive="active" class="nav-link">
+        <button type="submit" class="btn btn-primary" (click)="addBook()"
+        [disabled]="angForm.pristine || angForm.invalid" >
+        Create Book
+     </button></a>
+     </div>
+        </form>
+        </div>
+     
+      

@@ -1,0 +1,70 @@
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <td>Book Id</td>
+
+    <td>Book Author</td>
+    <td>Book releaseDate</td>
+    <td>Book Designation</td>
+    <td>Book unitprice</td>
+    <td>Book reference</td>
+    <td>Book title</td>
+    <td>Quantity</td>
+    
+    
+    <td>Buy</td>
+    <td>Remove</td>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let book of books ">
+        <td>{{ book.id}}</td>
+    <td>{{ book.auteur}}</td>
+    <td>{{ book.releaseDate}}</td>
+    <td>{{ book.designation }}</td>
+    <td>{{ book.prixUnitaire }}</td>
+    <td>{{ book.reference }}</td>
+    <td>{{ book.titre }}</td>
+    <td><select name="quantity"   class="form-control" formControlName="quantity" id="quantity" #q>
+        <option value="1" selected>1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+       </select></td>
+
+   <td><a  (click)="calculer(book.id,q.value)"  class="btn btn-success">Buy</a></td>
+
+    <td><a [routerLink]="['/books']" routerLinkActive="active" class="btn btn-danger"(click) = "deleteBook(book.id)">Delete</a></td>
+    </tr>
+    </tbody>
+   
+   </table>
+<br>
+<br>
+   <table class="table table-hover">
+    <thead>
+    <tr>
+        <div class="row">
+            <div class="col-sm-4">Id Line</div>
+            <div class="col-sm-8">Total</div>
+          </div>
+    
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let li of liste ; index as i">
+        <td >{{i+1}}</td>
+    <td>{{ li}}</td>
+    </tr>
+    </tbody>
+   </table>
+   <br>
+   <span>{{sum}}</span>
+   <br>
+   <br>
+    
+    <a    [routerLink]="['/books/buy',sum]" class="btn btn-success">Buy</a>
